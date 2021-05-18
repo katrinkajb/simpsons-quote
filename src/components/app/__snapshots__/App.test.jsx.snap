@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component renders App 1`] = `
+<DocumentFragment>
+  <h2>
+    Load a Random Simpsons Quote
+  </h2>
+  <button>
+    Get a Quote
+  </button>
+  <h1>
+    Loading
+  </h1>
+</DocumentFragment>
+`;
