@@ -8,9 +8,8 @@ exports[`App component renders App 1`] = `
   <button>
     Get a Quote
   </button>
-  <figure>
-    <img />
-    <figcaption />
-  </figure>
+  <h1>
+    Loading
+  </h1>
 </DocumentFragment>
 `;

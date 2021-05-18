@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Quote = ({ character, quote, image }) => (
-  <figure>
+  <>
     <img src={image} alt={character} />
-    <figcaption>{quote}</figcaption>
-  </figure>
+    <figcaption>
+      "{quote}" -- {character}
+    </figcaption>
+  </>
 );
 
 Quote.propTypes = {

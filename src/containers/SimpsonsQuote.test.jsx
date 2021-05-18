@@ -5,14 +5,16 @@ import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 
 const server = setupServer(
-  rest.get('https://thesimpsonsquoteapi.glitch.me/quotes', (res, req, ctx) => {
+  rest.get('https://thesimpsonsquoteapi.glitch.me/quotes', (req, res, ctx) => {
     return res(
       ctx.json([
         {
-          character: 'Bart Simpson',
-          quote: "Nothing you say can upset us. We're the MTV generation.",
+          character: 'Homer Simpson',
+          quote:
+            'I believe the children are the future... Unless we stop them now!',
           image:
-            'https://cdn.glitch.com/3c3ffadc-3406-4440-bb95-d40ec8fcde72%2FBartSimpson.png?1497567511638',
+            'https://cdn.glitch.com/3c3ffadc-3406-4440-bb95-d40ec8fcde72%2FHomerSimpson.png?1497567511939',
+          characterDirection: 'Left',
         },
       ])
     );
@@ -30,9 +32,9 @@ describe('SimpsonsQuote container', () => {
     fireEvent.click(button);
 
     return waitFor(() => {
-      screen.getByAltText('Bart Simpson');
+      screen.getByAltText('Homer Simpson');
       screen.getByText(
-        "Nothing you say can upset us. We're the MTV generation."
+        '"I believe the children are the future... Unless we stop them now!" -- Homer Simpson'
       );
     });
   });
